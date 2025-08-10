@@ -1,0 +1,24 @@
+server:
+  port: 8080   # 项目启动端口
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # 自动建表（开发环境可用: update / create / create-drop）
+    show-sql: true        # 控制台显示 SQL
+    properties:
+      hibernate:
+        format_sql: true  # SQL 格式化
+
+# 日志配置
+logging:
+  level:
+    root: info
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
