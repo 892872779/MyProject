@@ -3,10 +3,17 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.MyProject.mapper.UserMapper">
+    <insert id="insertUser"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO users (username, password, email, phone, status, createTime, updateTime)
+        VALUES (#{user.username}, #{user.password}, #{user.email}, #{user.phone}, #{user.status}, #{user.createTime},
+        #{user.updateTime})
+    </insert>
     <select id="findByUsername" resultType="com.example.MyProject.entity.User">
         SELECT id, username, password, email, phone, status, createTime, updateTime
         FROM users
-        WHERE username = #{username}
+        WHERE username = #{user.username}
+        and password = #{user.password}
         LIMIT 1
     </select>
 </mapper>

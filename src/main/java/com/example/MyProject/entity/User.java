@@ -2,6 +2,8 @@ package com.example.MyProject.entity;
 
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 public class User {
     private Integer id;
@@ -10,6 +12,6 @@ public class User {
     private String email;
     private String phone;
     private Integer status;
-    private java.time.LocalDateTime createTime;
-    private java.time.LocalDateTime updateTime;
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
 }

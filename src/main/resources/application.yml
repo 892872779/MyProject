@@ -12,18 +12,10 @@ mybatis:
   type-aliases-package: com.example.MyProject.domain
   configuration:
     map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-  jpa:
-    hibernate:
-      ddl-auto: update   # 自动建表（开发环境可用: update / create / create-drop）
-    show-sql: true        # 控制台显示 SQL
-    properties:
-      hibernate:
-        format_sql: true  # SQL 格式化
-
-# 日志配置
 logging:
   level:
-    root: info
-    org.hibernate.SQL: debug
-    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.mybatis: DEBUG
+    org.apache.ibatis: DEBUG
+    com.example.MyProject.mapper: DEBUG
