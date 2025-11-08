@@ -7,6 +7,11 @@ spring:
     url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.example.MyProject.domain
+  configuration:
+    map-underscore-to-camel-case: true
 
   jpa:
     hibernate:
